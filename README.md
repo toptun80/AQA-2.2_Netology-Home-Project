@@ -1,0 +1,1 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/5ddix8p5qa4fuyg9?svg=true)](https://ci.appveyor.com/project/toptun80/aqa-2-2-netology-home-project)
