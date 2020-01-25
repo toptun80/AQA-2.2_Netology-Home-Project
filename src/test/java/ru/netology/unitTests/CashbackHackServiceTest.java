@@ -36,10 +36,8 @@ class CashbackHackServiceTest {
     }
 
     @Test
-    void shouldReturn1000IfAmountEqualsZero() {
+    public void shouldReturnIllegalArgumentExceptionIfAmountEqualsZero() throws IllegalArgumentException {
         amount = 0;
-        actual = cashbackHackService.remain(amount);
-        expected = 1000;
-        assertEquals(expected, actual);
+        assertThrows(IllegalArgumentException.class, () -> cashbackHackService.remain(amount));
     }
 }
