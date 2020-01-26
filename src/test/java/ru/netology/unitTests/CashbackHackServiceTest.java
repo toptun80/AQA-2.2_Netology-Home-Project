@@ -15,13 +15,13 @@ class CashbackHackServiceTest {
 
     @ParameterizedTest
     @CsvFileSource(resources = "/CashbackHackServiceTestData.csv", numLinesToSkip = 1)
-    void shouldReturn1IfAmount999(int amount, int expected, String message) {
+    void checkCashbackHackService(int amount, int expected, String message) {
         actual = cashbackHackService.remain(amount);
-        assertEquals(expected, actual);
+        assertEquals(expected, actual, message);
     }
 
     @Test
-    @DisplayName("Должен выбросить исключение, если amount = 0")
+    @DisplayName("Должен выбросить исключение, если значение amount = 0")
     public void shouldReturnIllegalArgumentExceptionIfAmountEqualsZero() throws IllegalArgumentException {
         amount = 0;
         assertThrows(IllegalArgumentException.class, () -> cashbackHackService.remain(amount));
