@@ -13,26 +13,9 @@ class CashbackHackServiceTest {
     private int actual;
     private final CashbackHackService cashbackHackService = new CashbackHackService();
 
-    @DisplayName("Должен вернуть 1, если amount = 999")
     @ParameterizedTest
     @CsvFileSource(resources = "/CashbackHackServiceTestData.csv", numLinesToSkip = 1)
     void shouldReturn1IfAmount999(int amount, int expected, String message) {
-        actual = cashbackHackService.remain(amount);
-        assertEquals(expected, actual);
-    }
-
-    @DisplayName("Должен вернуть 999, если amount = 1001")
-    @ParameterizedTest
-    @CsvFileSource(resources = "/CashbackHackServiceTestData.csv", numLinesToSkip = 2)
-    void shouldReturn999IfAmount1001(int amount, int expected, String message) {
-        actual = cashbackHackService.remain(amount);
-        assertEquals(expected, actual);
-    }
-
-    @DisplayName("Должен вернуть 0, если значение amount кратно 1000")
-    @ParameterizedTest
-    @CsvFileSource(resources = "/CashbackHackServiceTestData.csv", numLinesToSkip = 3)
-    void shouldReturnZeroIfAmountMultiple1000(int amount, int expected, String message) {
         actual = cashbackHackService.remain(amount);
         assertEquals(expected, actual);
     }
